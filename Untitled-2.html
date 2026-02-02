@@ -8,10 +8,10 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: black; /* Changed background to black */
+      background-color: black;
       margin: 0;
       padding: 0;
-      color: white; /* Optional: make text visible on black background */
+      color: white;
     }
 
     header {
@@ -36,11 +36,11 @@
     .welcome-container {
       margin: 40px auto;
       padding: 20px;
-      background-color: #1a1a1a; /* Dark container to contrast with black background */
+      background-color: #1a1a1a;
       width: 80%;
       max-width: 600px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2); /* subtle light shadow */
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
     }
 
     .welcome-container img {
@@ -75,11 +75,17 @@
 
   <div class="welcome-container">
     <h2>Welcome, [User Name]!</h2>
-    <!-- Replace [User Image] with the actual path of the user's image -->
     <img src="[User Image]" alt="User Photo">
     <br>
-    <button type="button">Submit</button>
+    <button id="submitBtn" type="button">Submit</button>
   </div>
+
+  <script>
+    document.getElementById("submitBtn").addEventListener("click", function() {
+      // Simply stay on this page when clicked
+      alert("You are staying on this page!"); // Optional feedback
+    });
+  </script>
 
 </body>
 </html>
