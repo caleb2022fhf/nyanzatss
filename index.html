@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NYANZA TSS Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+    }
+
+    header img {
+      width: 60px;
+    }
+
+    header h1 {
+      margin: 0;
+      letter-spacing: 3px;
+      font-size: 26px;
+    }
+
+    .container {
+      height: calc(100vh - 90px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      width: 350px;
+      padding: 30px;
+      background: #111;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .login-box input,
+    .login-box select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: #0088cc;
+    }
+
+    /* PLUS ICON */
+    .plus-icon {
+      margin-top: 15px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 2px solid #00aaff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #00aaff;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .plus-icon:hover {
+      background: #00aaff;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" alt="Nyanza TSS Logo">
+    <h1>NYANZA TSS</h1>
+  </header>
+
+  <div class="container">
+    <div class="login-box">
+      <form>
+        <input type="text" placeholder="Enter ID" required>
+        <input type="password" placeholder="Enter PIN" required>
+
+        <select required>
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+
+        <button type="submit">SUB MIT</button>
+
+        <!-- PLUS ICON -->
+        <div class="plus-icon">+</div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
