@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NYANZA TSS Calendar</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+    }
+
+    header img {
+      width: 60px;
+    }
+
+    header h1 {
+      margin: 0;
+      letter-spacing: 3px;
+      font-size: 26px;
+      color: #00aaff;
+      text-shadow: 1px 1px 5px #00aaff;
+    }
+
+    .container {
+      height: calc(100vh - 90px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calendar {
+      background: linear-gradient(145deg, #1a1a1a, #222);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,170,255,0.5);
+      width: 400px;
+      color: #fff;
+    }
+
+    .calendar h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+
+    .calendar table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .calendar th, .calendar td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .calendar th {
+      background: linear-gradient(90deg, #00aaff, #00ffea);
+      color: black;
+      border-radius: 5px;
+      text-shadow: none;
+    }
+
+    /* Weekends in different color */
+    .calendar td:nth-child(1), .calendar td:nth-child(7) {
+      color: #ff6b6b;
+      font-weight: bold;
+    }
+
+    .calendar td:hover {
+      background: #00aaff;
+      color: black;
+      border-radius: 50%;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    /* Current day highlight example (e.g., 2nd Feb) */
+    .current-day {
+      background: #ffea00;
+      color: black;
+      border-radius: 50%;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ffea00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Nyanza TSS Logo">
+    <h1>NYANZA TSS</h1>
+  </header>
+
+  <div class="container">
+    <div class="calendar">
+      <h2>February 2026</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="current-day">1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
