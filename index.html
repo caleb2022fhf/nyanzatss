@@ -74,7 +74,6 @@
       background: #0088cc;
     }
 
-    /* PLUS ICON */
     .plus-icon {
       margin-top: 15px;
       width: 35px;
@@ -109,14 +108,14 @@
   <div class="container">
     <div class="login-box">
       <!-- Form goes to Untitled-2 -->
-      <form action="Untitled-2.html" method="get">
-        <input type="text" placeholder="Enter ID" required>
-        <input type="password" placeholder="Enter PIN" required>
+      <form id="loginForm">
+        <input type="text" id="userId" placeholder="Enter ID" required>
+        <input type="password" id="userPin" placeholder="Enter PIN" required>
 
-        <select required>
+        <select id="userGender" required>
           <option value="">Select Gender</option>
-          <option>Male</option>
-          <option>Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
 
         <button type="submit">SUB MIT</button>
@@ -126,6 +125,27 @@
       <div class="plus-icon" onclick="window.location.href='Untitled-3.html'">+</div>
     </div>
   </div>
+
+  <script>
+    const allowedId = "1234567891234567";
+    const allowedPin = "123456";
+    const allowedGender = "Male";
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent default form submission
+
+      const id = document.getElementById("userId").value;
+      const pin = document.getElementById("userPin").value;
+      const gender = document.getElementById("userGender").value;
+
+      if(id === allowedId && pin === allowedPin && gender === allowedGender) {
+        // All checks passed, redirect to Untitled-2.html
+        window.location.href = "Untitled-2.html";
+      } else {
+        alert("Invalid credentials or gender! Please try again.");
+      }
+    });
+  </script>
 
 </body>
 </html>
