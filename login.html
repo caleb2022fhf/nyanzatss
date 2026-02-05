@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NYANZA TSS Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    /* HEADER (copied from calendar page) */
+    header {
+      background: #0b5d2a;
+      padding: 20px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* CENTER the logo and text */
+      gap: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    header img {
+      width: 60px;
+    }
+
+    /* LOGIN FORM CONTAINER */
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    .login-box {
+      background: #222;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,170,255,0.5);
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      color: #00e5ff;
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      background: #111;
+      color: white;
+      font-size: 15px;
+    }
+
+    .login-box button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #0b5d2a;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: #094a22;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <img src="nyanza%20tss.webp" alt="NYANZA TSS Logo">
+    <h1>NYANZA TSS</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="login-box">
+    <h2>Login</h2>
+
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+
+    <button>Log In</button>
+    <button>Create Account</button>
+  </div>
+</div>
+
+</body>
+</html>
