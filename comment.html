@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NYANZA TSS</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: #0b5d2a;
+            padding: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        header img {
+            width: 60px;
+        }
+
+        /* CONTAINER */
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .comment-box {
+            background: white;
+            width: 80%;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .comment-box h2 {
+            text-align: center;
+            color: #0b5d2a;
+            margin-bottom: 25px;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #0b5d2a;
+            color: white;
+        }
+
+        /* Column sizes */
+        .parent-col {
+            width: 25%;
+            font-weight: bold;
+        }
+
+        .comment-col {
+            width: 75%;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="nyanza%20tss.webp" alt="NYANZA TSS Logo">
+        <h1>NYANZA TSS</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="comment-box">
+        <h2>COMMENT</h2>
+
+        <table>
+            <tr>
+                <th class="parent-col">Parent</th>
+                <th class="comment-col">Comment</th>
+            </tr>
+
+            <tr>
+                <td class="parent-col">Mr. Mukamana</td>
+                <td class="comment-col">
+                    Please ensure my child arrives on time.  
+                    I have discussed this issue with him.
+                </td>
+            </tr>
+
+            <tr>
+                <td class="parent-col">Mrs. Uwimana</td>
+                <td class="comment-col">
+                    Thank you for informing us.  
+                    We will follow up on this behavior.
+                </td>
+            </tr>
+
+            <tr>
+                <td class="parent-col">Mr. Nshimiyimana</td>
+                <td class="comment-col">
+                    I acknowledge the mistake and will cooperate
+                    with the school administration.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
