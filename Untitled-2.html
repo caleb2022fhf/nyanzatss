@@ -1,84 +1,151 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome • Nyanza TSS</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: black;
-      margin: 0;
-      padding: 0;
-      color: white;
-    }
+    <meta charset="UTF-8">
+    <title>NYANZA TSS Chat</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
 
-    header {
-      background-color: #004d00;
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
+        /* HEADER */
+        header {
+            background: #0b5d2a;
+            padding: 15px 20px;
+        }
 
-    header img {
-      height: 60px;
-    }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
+        header h1 {
+            margin: 0;
+            color: white;
+            letter-spacing: 1px;
+        }
 
-    .welcome-container {
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #1a1a1a;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-    }
+        header img {
+            width: 60px;
+        }
 
-    .welcome-container img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin: 20px 0;
-      object-fit: cover;
-    }
+        /* CHAT CONTAINER */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: calc(100vh - 80px); /* full height minus header */
+            max-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #004d00;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
 
-    button:hover {
-      background-color: #006600;
-    }
-  </style>
+        .message {
+            max-width: 60%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 8px 0;
+            clear: both;
+            word-wrap: break-word;
+        }
+
+        /* Incoming message */
+        .message.incoming {
+            background: #ffffff;
+            float: left;
+            border: 1px solid #ccc;
+        }
+
+        /* Outgoing message */
+        .message.outgoing {
+            background: #0b5d2a;
+            color: white;
+            float: right;
+        }
+
+        /* MESSAGE INPUT */
+        .message-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .message-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .message-input button {
+            padding: 12px 20px;
+            background: #0b5d2a;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .message-input button:hover {
+            background: #094a22;
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="images.jpg" alt="Nyanza TSS Logo">
-    <h1>NYANZA TSS</h1>
-  </header>
+<header>
+    <div class="header-content">
+        <img src="nyanza%20tss.webp" alt="NYANZA TSS Logo">
+        <h1>NYANZA TSS</h1>
+    </div>
+</header>
 
-  <div class="welcome-container">
-    <h2>Welcome, [User Name]!</h2>
-    <img src="[User Image]" alt="User Photo">
-    <br>
-    <button type="button" onclick="window.location.href='Untitled-3.html'">Submit</button>
-  </div>
+<div class="chat-container">
+    <div class="messages" id="messages">
+        <!-- Sample messages -->
+        <div class="message incoming">Hello, how was your day?</div>
+        <div class="message outgoing">It was good! I finished my homework.</div>
+        <div class="message incoming">Great! Did you attend all your classes?</div>
+        <div class="message outgoing">Yes, all of them.</div>
+    </div>
+
+    <div class="message-input">
+        <input type="text" id="chatInput" placeholder="Write a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const messages = document.getElementById('messages');
+        const text = input.value.trim();
+
+        if (text !== '') {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message outgoing';
+            msgDiv.textContent = text;
+            messages.appendChild(msgDiv);
+
+            // Scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+
+            // Clear input
+            input.value = '';
+        }
+    }
+</script>
 
 </body>
 </html>
