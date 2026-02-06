@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NYANZA TSS Registration</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            background: #0b5d2a;
+            padding: 15px 20px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        header img {
+            width: 60px;
+        }
+
+        /* REGISTRATION FORM */
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 300px;
+            text-align: center;
+            margin-top: 100px; /* space below header */
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #0b5d2a;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #094a22;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="images1.jpg" alt="User Picture">
+
+        <h1>NYANZA TSS</h1>
+    </div>
+</header>
+
+<div class="form-container">
+    <h2>Register</h2>
+    <input type="text" placeholder="ID" id="user-id">
+    <input type="password" placeholder="PIN" id="user-pin">
+    <input type="password" placeholder="Password" id="user-password">
+    <!-- Picture upload removed -->
+    <button id="register-btn" onclick="registerUser()">Register</button>
+</div>
+
+<script>
+    function registerUser() {
+        const id = document.getElementById('user-id').value.trim();
+        const pin = document.getElementById('user-pin').value.trim();
+        const password = document.getElementById('user-password').value.trim();
+
+        if(id === "" || pin === "" || password === "") {
+            alert("Please fill in all fields!");
+            return;
+        }
+
+        // For demo, show entered data
+        alert(`ID: ${id}\nPIN: ${pin}\nPassword: ${password}\nRegistration Successful!`);
+
+        // Clear fields
+        document.getElementById('user-id').value = '';
+        document.getElementById('user-pin').value = '';
+        document.getElementById('user-password').value = '';
+    }
+</script>
+
+</body>
+</html>
