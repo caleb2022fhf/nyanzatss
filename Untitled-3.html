@@ -65,7 +65,7 @@
       border: 1px solid #444;
       padding: 10px;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: all 0.15s ease;
     }
 
     .calendar th {
@@ -81,12 +81,16 @@
       font-weight: bold;
     }
 
-    .calendar td:hover {
+    /* Make clickable days obvious */
+    .calendar td.clickable {
+      cursor: pointer;
+    }
+
+    .calendar td.clickable:hover {
       background: #00aaff;
       color: black;
       border-radius: 50%;
-      transform: scale(1.1);
-      cursor: pointer;
+      transform: scale(1.08);
     }
 
     /* Current day highlight example (e.g., 2nd Feb) */
@@ -107,7 +111,7 @@
   </header>
 
   <div class="container">
-    <div class="calendar">
+    <div class="calendar" id="calendar">
       <h2>February 2026</h2>
       <table>
         <thead>
@@ -128,49 +132,75 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="current-day">1</td>
-            <td>2</td>
+            <td class="current-day clickable" data-day="1">1</td>
+            <td class="clickable" data-day="2">2</td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
+            <td class="clickable" data-day="3">3</td>
+            <td class="clickable" data-day="4">4</td>
+            <td class="clickable" data-day="5">5</td>
+            <td class="clickable" data-day="6">6</td>
+            <td class="clickable" data-day="7">7</td>
+            <td class="clickable" data-day="8">8</td>
+            <td class="clickable" data-day="9">9</td>
           </tr>
           <tr>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>16</td>
+            <td class="clickable" data-day="10">10</td>
+            <td class="clickable" data-day="11">11</td>
+            <td class="clickable" data-day="12">12</td>
+            <td class="clickable" data-day="13">13</td>
+            <td class="clickable" data-day="14">14</td>
+            <td class="clickable" data-day="15">15</td>
+            <td class="clickable" data-day="16">16</td>
           </tr>
           <tr>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
+            <td class="clickable" data-day="17">17</td>
+            <td class="clickable" data-day="18">18</td>
+            <td class="clickable" data-day="19">19</td>
+            <td class="clickable" data-day="20">20</td>
+            <td class="clickable" data-day="21">21</td>
+            <td class="clickable" data-day="22">22</td>
+            <td class="clickable" data-day="23">23</td>
           </tr>
           <tr>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
+            <td class="clickable" data-day="24">24</td>
+            <td class="clickable" data-day="25">25</td>
+            <td class="clickable" data-day="26">26</td>
+            <td class="clickable" data-day="27">27</td>
+            <td class="clickable" data-day="28">28</td>
+            <td class="clickable" data-day="29">29</td>
             <td></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+
+  <script>
+    // When a clickable day is clicked, navigate to viewmist.html with query params
+    (function () {
+      const month = '02'; // numeric month (zero-padded) for February
+      const year = '2026';
+      document.querySelectorAll('.calendar td.clickable').forEach(td => {
+        td.addEventListener('click', () => {
+          const day = td.dataset.day;
+          if (!day) return;
+          // Build URL: viewmist.html?year=2026&month=02&day=15
+          const params = new URLSearchParams({ year, month, day: String(day).padStart(2, '0') });
+          window.location.href = 'viewmist.html?' + params.toString();
+        });
+
+        // Allow keyboard activation for accessibility
+        td.setAttribute('tabindex', '0');
+        td.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            td.click();
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
