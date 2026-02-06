@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NYANZA TSS Password Reset</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* HEADER (copied from provided code) */
+        header {
+            background: #0b5d2a;
+            padding: 15px 20px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        header img {
+            width: 60px;
+        }
+
+        /* FORM CONTAINER */
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 320px;
+            text-align: center;
+            margin-top: 100px; /* space below header */
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #0b5d2a;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #094a22;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="images1.jpg" alt="User Picture">
+        <h1>NYANZA TSS</h1>
+    </div>
+</header>
+
+<div class="form-container">
+    <h2>Reset Password</h2>
+
+    <input type="password" placeholder="Old PIN" id="old-pin" autocomplete="current-password">
+    <input type="password" placeholder="New Password" id="new-password" autocomplete="new-password">
+    <input type="password" placeholder="Confirm New Password" id="confirm-password" autocomplete="new-password">
+
+    <button id="submit-btn" onclick="submitReset()">Submit</button>
+
+    <div class="note">Make sure your new password is at least 8 characters.</div>
+</div>
+
+<script>
+    function submitReset() {
+        const oldPin = document.getElementById('old-pin').value.trim();
+        const newPass = document.getElementById('new-password').value.trim();
+        const confirmPass = document.getElementById('confirm-password').value.trim();
+
+        if (!oldPin || !newPass || !confirmPass) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (newPass.length < 8) {
+            alert('New password must be at least 8 characters long.');
+            return;
+        }
+
+        if (newPass !== confirmPass) {
+            alert('New password and confirmation do not match.');
+            return;
+        }
+
+        // Demo behavior: show entered values (do not show real passwords in production)
+        alert('Old PIN: ' + oldPin + '\nNew password set successfully.');
+
+        // Clear fields
+        document.getElementById('old-pin').value = '';
+        document.getElementById('new-password').value = '';
+        document.getElementById('confirm-password').value = '';
+    }
+</script>
+
+</body>
+</html>
